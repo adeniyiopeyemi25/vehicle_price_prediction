@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-
+from category_encoders import TargetEncoder
 
 st.write("""
 ## Car Price Predition App
@@ -30,6 +30,9 @@ def user_input():
     models = {car: search_model(car) for car in df['standard_make'].unique().tolist()}
     if car in models.keys():   
         model = st.sidebar.selectbox(label="Model", options=models[car]) 
+    # body = {model: search_body(car) for model in df['standard_model'].unique().tolist()}
+    # if model in body.keys():
+    #     body = st.sidebar.selectbox(label="Body Type", options=body[model]) 
         body = st.sidebar.selectbox(label="Body Type", options=df['body_type'].unique().tolist())
         fuel = st.sidebar.selectbox(label="Fuel Type", options=df['fuel_type'].unique().tolist())
         age = st.sidebar.slider("Vehicle Age", 1,30,1)
