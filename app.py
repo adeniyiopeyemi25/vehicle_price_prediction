@@ -7,7 +7,7 @@ import pickle
 st.write("""
 ## Car Price Predition App
          
-This app predicts price of vehicle in England, You have to select the car Brand first then folow up with other information, also note that as you select  the information, it shows at the right and get predicted.        
+This application forecasts the price of vehicles in England. To begin, choose the car brand and then provide additional details. The selected vehicle information will be displayed below, and you can observe the predicted price changing as you modify the metrics.        
          """)
 st.write('---')
 df = pd.read_csv("clean_adverts.csv")
